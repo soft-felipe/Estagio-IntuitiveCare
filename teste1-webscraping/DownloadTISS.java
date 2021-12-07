@@ -16,7 +16,7 @@ public class DownloadTISS {
         URL urlComponenteOrganizacional = encontrarURLComponenteOrganizacional(urlTISS);
 
         // 3° - Fazendo o download do Componente Organizacional em PDF.
-        baixarComponenteOrganizacional(urlComponenteOrganizacional, new File("C:\\Users\\user\\Desktop\\temp\\Componente_Organizacional_TISS.pdf"));
+        baixarComponenteOrganizacional(urlComponenteOrganizacional, new File("Componente_Organizacional_TISS.pdf"));
     }
 
     /**
