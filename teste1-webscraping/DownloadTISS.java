@@ -8,13 +8,13 @@ import java.net.URL;
 public class DownloadTISS {
     public static void main(String[] args) throws Exception {
     
-        // 1° - Acessando a página inicial do TISS e buscando a URL versão mais recente do Padrão TISS.             
+        // 1° - Acessando a página inicial do TISS e buscando a URL da versão mais recente do Padrão TISS.             
         URL urlTISS = encontrarURLVersaoRecenteTISS();
 
-        // 2° - Buscando a URL do Componente Organizacional em pdf.
+        // 2° - Buscando a URL do Componente Organizacional em PDF.
         URL urlComponenteOrganizacional = encontrarURLComponenteOrganizacional(urlTISS);
 
-        // 3° - Fazendo o download do Componente Organizacional em pdf.
+        // 3° - Fazendo o download do Componente Organizacional em PDF.
         baixarComponenteOrganizacional(urlComponenteOrganizacional, new File("C:\\Users\\user\\Desktop\\temp\\Componente_Organizacional_TISS.pdf"));
     }
 
@@ -53,10 +53,10 @@ public class DownloadTISS {
 
     /**
      * Método para encontrar o endereço URL do Componente Organizacional do 
-     * Padrão TISS em pdf, nesse caso o organizacional de novembro/2021.
+     * Padrão TISS em PDF, nesse caso o organizacional de novembro/2021.
      * 
      * @param urlTISS O URL identificada do Padrão TISS mais recente.
-     * @return URL do pdf ou <code>null</code>, caso contrário.
+     * @return URL do PDF ou <code>null</code>, caso contrário.
      * @throws Exception Problemas relacionados à conexão.
      */
     public static URL encontrarURLComponenteOrganizacional(URL urlTISS) throws Exception {
@@ -84,10 +84,10 @@ public class DownloadTISS {
 
 
     /**
-     * Método para fazer o download em pdf do Componente Organizacional do Padrão TISS mais recente do site.
+     * Método para fazer o download em PDF do Componente Organizacional do Padrão TISS mais recente do site.
      * 
      * @param urlComponenteOrganizacional Endereço URL extráida da página principal.
-     * @param destino Destino do arquivo em pdf.
+     * @param destino Destino do arquivo em PDF.
      * @throws Exception Problemas relacionados à conexão.
      */
     public static void baixarComponenteOrganizacional(URL urlComponenteOrganizacional, File destino) throws Exception {
