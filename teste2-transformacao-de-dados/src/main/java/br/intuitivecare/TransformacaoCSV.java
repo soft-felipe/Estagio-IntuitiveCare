@@ -19,22 +19,22 @@ public class TransformacaoCSV {
 
     public static void main(String[] args) throws Exception {
 
-        // 1° Extrair o Quadro 30 - Tabela de tipo de demandante e exportar para o
+        // 1° Extrair o "Quadro 30 - Tabela de tipo de demandante" e exportar os dados para o
         // arquivo CSV.
         String[] quadro30 = extrairQuadro30TipoDemandante();
         vetorParaCSV(quadro30, new File("quadro30.csv"));
 
-        // 2° Extrair o Quadro 31 - Tabela de categoria do Padrão TISS e exportar para o
+        // 2° Extrair o Quadro 31 - "Tabela de categoria do Padrão TISS" e exportar os dados para o
         // arquivo CSV.
         String[] quadro31 = extrairQuadro31PadraoTISS();
         vetorParaCSV(quadro31, new File("quadro31.csv"));
 
-        // 3° Extrair o Quadro 32 - Tabela de tipo de solicitação e exportar para o
+        // 3° Extrair o "Quadro 32 - Tabela de tipo de solicitação" e exportar os dados para o
         // arquivo CSV.
         String[] quadro32 = extrairQuadro32TipoSolicitacao();
         vetorParaCSV(quadro32, new File("quadro32.csv"));
 
-        // 4° Comprindo os todos os arquivos CSV para ZIP.
+        // 4° Comprindo todos os arquivos CSV para ZIP.
         comprimirArquivosZIP(Arrays.asList("quadro30.csv", "quadro31.csv", "quadro32.csv"), "Teste_Felipe_Moreira.zip");
     }
 
@@ -159,8 +159,9 @@ public class TransformacaoCSV {
 
     /**
      * Método para converter os dados das tabelas em CSV.
+     * 
      * @param vetor Recebe os dados das tabelas.
-     * @param destino Caminho relativo do arquivo em CSV.
+     * @param destino Caminho relativo da tabela estruturada em CSV.
      * @throws Exception Problemas relacionados à conexão.
      */
     public static void vetorParaCSV(String vetor[], File destino) throws Exception {
@@ -185,7 +186,8 @@ public class TransformacaoCSV {
 
     /**
      * Método para comprimir os dados das tabelas, de CSV para ZIP.
-     * @param arquivos Recebendo os dados das tabelas em CSV.
+     * 
+     * @param arquivos Recebendo os dados das tabelas estruturadas em CSV.
      * @param destino Caminho relativo do arquivo comprimido em ZIP.
      * @throws Exception Problemas relacionados à conexão.
      */
@@ -195,6 +197,7 @@ public class TransformacaoCSV {
         ZipOutputStream zipOut = new ZipOutputStream(fos);
 
         for (String srcFile : arquivos) {
+            
             File fileToZip = new File(srcFile);
             FileInputStream fis = new FileInputStream(fileToZip);
             ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
